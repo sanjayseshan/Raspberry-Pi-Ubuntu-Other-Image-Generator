@@ -1,0 +1,9 @@
+# sets permissions so ev3dev group can control LEDs (only those that end with ":ev3dev")
+
+SUBSYSTEM=="leds", DEVPATH=="*:ev3dev", ACTION=="add|change", \
+	RUN+="/usr/bin/find /sys$devpath -type f -exec /bin/chmod g+u {} + -exec /bin/chown :ev3dev {} +"
+
+# Set permissions so ev3dev group can control lego bus devices, ports, sensors and motors
+
+SUBSYSTEM=="lego|lego-port|lego-sensor|tacho-motor|servo-motor|dc-motor", ACTION=="add", \
+    RUN+="/usr/bin/find /sys$devpath -type f -exec /bin/chmod g+u {} + -exec /bin/chown :ev3dev {} +"

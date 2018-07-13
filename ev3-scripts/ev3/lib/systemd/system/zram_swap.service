@@ -1,0 +1,20 @@
+[Unit]
+Description=swap with zram
+DefaultDependencies=no
+Before=swap.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+
+# Change the maximal number of parallel streams (-s), algorithm (-a) and
+# size (in megabytes) to your needs.
+# Make sure to avoid collision of devices (-d...) with
+# zram_tmp.service and zram_var_tmp.service and that
+# num_devices in modprobe.d/zram.conf contains the maximal used number + 1
+
+ExecStart=/usr/sbin/zram-init -alz4 64
+ExecStop=/usr/sbin/zram-init 0
+
+[Install]
+WantedBy=swap.target
