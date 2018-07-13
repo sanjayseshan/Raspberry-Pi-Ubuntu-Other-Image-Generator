@@ -26,6 +26,6 @@ You can pass block_device (/dev/mmcblk0) to create the image directly on a card,
 
 root and pi password is ```raspberry```
 
-Support generation of Debian, Ubuntu, or Kali with armhf or armel (no arm64 yet)
+Support generation of Debian or Ubuntu with armhf or armel (no arm64 yet). Note: Ubuntu discontinued support for armel in 2013.
 
 Only works on a full linux kernel with a Debian-based system....do not bother trying on WSL --> does not work.
