@@ -4,7 +4,7 @@ Debian Stretch image builder for Raspberry Pi (all versions) (32-bit only).
 
 Based on worky by Klaus M Pfeiffer, http://www.kmp.or.at/~klaus/raspberry/build_rpi_sd_card.sh
 
-rpi-jessie will:
+script will:
   - create, partition and format an image
   - install and configure base debian jessie system with Open SSH server
   - download rpi-update which will install the nescessary firmware and bootloader for RPi3 (wifi & bt also)
